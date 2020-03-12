@@ -1,34 +1,38 @@
 package com.company.Structures;
 
-import java.lang.reflect.Array;
+
 import java.util.Arrays;
 
 public class T01BubbleSortTest {
 
-    public T01BubbleSortTest(int[] num){
+    public T01BubbleSortTest(int[] arrNum){
         //declarations
-        boolean doSwapped = true;
-        int lastIndex = num.length-1;
+        boolean doSwaps = true;
+        int lastNum = arrNum.length - 1;
 
-        while(doSwapped){
-            doSwapped = false;
+        //While loop to keep going over and over for size of array. Have it short when no change
+        while(doSwaps){
+            doSwaps = false;
 
-            for (int i =0; i < lastIndex; i++){
-                if(num[i] > num[i+1]){
-                    swap(num,i,i+1);
-                    doSwapped = true;
+            //for loop from 0 to X, each loop will compare current index to next index until > value is pushed to end.
+            for(int i = 0; i < lastNum; i++){
+                if(arrNum[i]>arrNum[i+1]){
+                    swap(arrNum,i,i+1);
+                    doSwaps = true;
                 }
             }
-            //reduce last
-            lastIndex--;
+            lastNum--;
+            //doSwaps true when there is a change
+            //remove one number form end
         }
 
-        System.out.println("Sorted Array list: "+ Arrays.toString(num));
+        System.out.println("Array Sorted: "+ Arrays.toString(arrNum));
+
     }
 
-    private void swap(int[] num, int from, int to) {
-        int temp = num[to];
-        num[to] = num[from];
-        num[from] = temp;
+    private void swap(int[] arrNum, int from, int to) {
+        int temp = arrNum[to];
+        arrNum[to] = arrNum[from];
+        arrNum[from]=temp;
     }
 }

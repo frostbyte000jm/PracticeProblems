@@ -2,6 +2,7 @@ package com.company;
 
 import com.company.Structures.T01BubbleSort;
 import com.company.Structures.T01BubbleSortTest;
+import com.company.Structures.T02MergeSort;
 
 public class Main {
 
@@ -14,8 +15,11 @@ public class Main {
         //bubbleSort bs = new bubbleSort(arrNumTest);
         T01BubbleSortTest bst01 = new T01BubbleSortTest(arrNumTest);
 
-        int[] arrNumTest2 = {1,2,3,4,5,6};
-        T01BubbleSort bs2 = new T01BubbleSort(arrNumTest2);
+        //int[] arrNumTest2 = {1,2,3,4,5,6};
+        //T01BubbleSort bs2 = new T01BubbleSort(arrNumTest2);
+
+        int[] arrMergeSortTest = {87, 57, 370, 110, 90, 610, 02, 710, 140, 203, 150};
+        T02MergeSort ms1 = new T02MergeSort(arrMergeSortTest);
 
 
     }
