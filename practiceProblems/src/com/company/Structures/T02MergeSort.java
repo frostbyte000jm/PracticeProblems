@@ -11,36 +11,36 @@ public class T02MergeSort {
         System.out.println("Merge Sort Values: "+ Arrays.toString(arrNum));
     }
 
-    private void mergeSort(int[] input, int start, int end) {
+    private void mergeSort(int[] input, int front, int tail) {
         //set mid point
-        int mid = (start + end)/2;
+        int mid = (front + tail)/2;
 
-        //split in half
-        if(start<end){
-            mergeSort(input,start,mid);
-            mergeSort(input,mid+1,end);
+        //divide and concur. Split in half until everything is separated.
+        if(front<tail){
+            mergeSort(input,front,mid);
+            mergeSort(input,mid+1,tail);
         }
 
-        //create a loop for front to middle, and from middle to last
-        int i=0,first = start, last = mid + 1;
-        int[] temp = new int[end-start+1];
+        //declarations for while loops below
+        int i=0,firstHalf = front, secondHalf = mid + 1; //i is a TempIndex
+        int[] temp = new int[tail-front+1];
 
         //Compare the two values, and sort them.
-        while(first<= mid && last <=end){
-            temp[i++] = input[first] < input[last] ? input[first++] : input[last++];
+        while(firstHalf<= mid && secondHalf <=tail){
+            temp[i++] = input[firstHalf] < input[secondHalf] ? input[firstHalf++] : input[secondHalf++];
         }
-        // place the first into temp
-        while (first<=mid){
-            temp[i++] = input[first++];
+        // place the firstHalf into temp
+        while (firstHalf<=mid){
+            temp[i++] = input[firstHalf++];
         }
-        //place the second half into temp
-        while (last<=end){
-            temp[i++] = input[last++];
+        //place the secondHalf into temp
+        while (secondHalf<=tail){
+            temp[i++] = input[secondHalf++];
         }
         //Drop what is sorted from Temp into Input
         i=0;
-        while (start<=end){
-            input[start++] = temp[i++];
+        while (front<=tail){
+            input[front++] = temp[i++];
         }
     }
 
