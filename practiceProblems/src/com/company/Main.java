@@ -12,16 +12,15 @@ public class Main {
         System.out.println("Hello World!");
 
         //Test Bubble Sort
-        int[] arrNumTest = {3,5,7,2,4,3,6,1};
+        int[] arrNumTest = {87, 57, 370, 110, 90, 610, 02, 710, 140, 203, 150};
         //bubbleSort bs = new bubbleSort(arrNumTest);
         T01BubbleSortTest bst01 = new T01BubbleSortTest(arrNumTest);
 
         //int[] arrNumTest2 = {1,2,3,4,5,6};
         //T01BubbleSort bs2 = new T01BubbleSort(arrNumTest2);
 
-        int[] arrMergeSortTest = {87, 57, 370, 110, 90, 610, 02, 710, 140, 203, 150};
-        T02MergeSort ms1 = new T02MergeSort(arrMergeSortTest);
-        T02MergeSortTest ms2 = new T02MergeSortTest(arrMergeSortTest);
+        T02MergeSort ms1 = new T02MergeSort(arrNumTest);
+        T02MergeSortTest ms2 = new T02MergeSortTest(arrNumTest);
 
 
     }
